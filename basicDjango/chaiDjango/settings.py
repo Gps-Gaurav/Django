@@ -38,11 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'chai',  # Custom app for chaiDjango
-    'tailwind'
-    'theme'
+    'tailwind',
+    'theme',
+    'django_browser_reload',  # For live reloading during development
 ]
-
-
+TAILWIND_APP_NAME = 'theme'
+INTERNAL_IPS = ['127.0.0.1']
+NPM_BIN_PATH = '/Users/gaurav/.nvm/versions/node/v20.18.2/bin/npm'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -51,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_browser_reload.middleware.BrowserReloadMiddleware',  # Middleware for live reloading
 ]
 
 ROOT_URLCONF = 'chaiDjango.urls'

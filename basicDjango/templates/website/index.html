@@ -1,14 +1,10 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Django Site</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
-<body>
-    <h1>Welcome to Django</h1>
-    <p>This is a basic template</p>
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block title %}
+
+home page
+{% endblock %}
+{% block content %}
+<h1 class= "bg-red-500" >home</h1>
+<p>Welcome to the home page!</p>
+<p>This is a basic Django template using Tailwind CSS.</p>
+{% endblock %}
